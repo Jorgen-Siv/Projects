@@ -1,0 +1,16 @@
+Project 2:
+We consider a 1D stationary model for the diffusion and convection of a fluid in a tube.
+For this we use a boundary condition problem with a differential equation (1) similar to
+the Poisson equation, obtained by combining laws for conservation of mass, Fick’s law and
+Reynold’s theorem.
+−∂x(α(x)∂xu + ∂xb(x)u + c(x)u = f (x) (1)
+The solution u represents the concentration of the fluid at any given point x in the span
+of the tube, denoted as the domain Ω ∈ (0, 1). At each edge, there is no fluid present, and
+our boundary conditions are therefore u(0) = u(1) = 0. The analytical solution u is part
+of the infinite dimensional Hilbert space H1
+0 (0, 1), with our numerical approximation uh
+being in the discrete subspace uh ∈ Vh = X1
+h(0, 1) ∩ H1
+0 (0, 1). In addition to numerically
+approximating the solution of problem (1), related mathematical matters such as solution
+uniqueness, error analysis and the convergence rate of the scheme will be explored.
