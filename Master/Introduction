@@ -1,0 +1,10 @@
+In a world that demands more and more energy, there is a need for developments within renewable, clean energy. 
+An example of a recent development is Floating Photo-Voltaic (FPVs), i.e floating solar cells. 
+Especially there has been a focus on multi-modular structures since they allow for flexibility and simplicity in scaling. 
+A big challenge for this structure and FPVs in general is the effect of environmental forces and how the dynamics of the structure interacts with these forces. 
+To minimize the effect and response dynamics of the structure, controllable connectors and dampers are installed to be able to alter the dynamics of the system as needed. 
+Determining the stiffness and damping that is best for a given sea state can be described as an optimization problem subjected to physical constraints, for example saturation in the connectors. 
+Furthermore, one can find an optimal control algorithm to find the optimal stiffness or damping. 
+However, there are potential challenges with this approach, such as the high number of variables, particularly the amount of connectors that must be optimized.
+Therefore, there is a need to improve current methods or establish new methods of optimal control.
+Another challenge that will affect the process of improving methods will be the real-time constraint for the controller.  
