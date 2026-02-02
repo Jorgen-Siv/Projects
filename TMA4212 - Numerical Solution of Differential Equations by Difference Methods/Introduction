@@ -1,4 +1,14 @@
+Project 1: 
+
+This paper is a study into both the mathematical foundations, 
+as well as implementations of numerical approximations of the Poisson heat equation, 
+using finite difference schemes for elliptic 2-D problems in complex domains. 
+We will also delve into the related issues, like problems one might run into during the implementation, 
+and the error of the approximations.
+
+
 Project 2:
+
 We consider a 1D stationary model for the diffusion and convection of a fluid in a tube.
 For this we use a boundary condition problem with a differential equation (1) similar to
 the Poisson equation, obtained by combining laws for conservation of mass, Fick’s law and
