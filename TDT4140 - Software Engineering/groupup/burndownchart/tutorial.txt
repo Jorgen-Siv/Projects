@@ -1,0 +1,15 @@
+Når du er ferdig med et issue, og mener at du har utført noen story points legg data i 
+'burndowndata.txt'.
+
+'burndowndata.txt' spesifiserer format i rad 1, skriv da under rad 1.
+Dato til venstre og antall utførte story points til høyre.
+
+run 'burndowngraph.py' for å få opp brenndiagrammet;)
+--------------------------------------------------------------------------------------------------
+Eksempel på hvordan 'burndowndata.txt' kan se ut:
+
+date:points
+4.mar:30
+5.mar:10
+6.mar:40
+6.mar:90

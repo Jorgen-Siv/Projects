@@ -1,0 +1,107 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/create_profile.css' %}">
+<br></br>
+<br></br>
+<div class="container">
+    <div class="card">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="card-body">
+                <div class="row gutters">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <h6 class="mb-2 text-primary" id="heading">Create Profile</h6>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            {{ form.username }}
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            {{ profile_form.full_name }}
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="password1">Password</label>
+                            {{ form.password1 }}
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="birth">Date of Birth</label>
+                            {{ profile_form.date_of_birth }}
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="password2">Confirm Password</label>
+                            {{ form.password2 }}
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="email">E-mail address</label>
+                            {{ profile_form.email }}
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="interest">Interest</label>
+                            {{ profile_form.interest_temp }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="text-right">
+                        <a class="btn btn-secondary" href="{% url 'login' %}">Cancel</a>
+                        <input class="btn btn-primary" id="submit" type="submit" value="Register Account">
+                    </div>
+                </div>
+            </div>
+    </div>
+    {% if profile_form.errors %}
+    {% for field in profile_form %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+    {% if form.errors %}
+    {% for field in form %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+    </form>
+</div>
+</div>
+<script src="{% static 'js/create_profile.js' %}"></script>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[3].placeholder='Enter password';
+    form_fields[5].placeholder='Re-enter Password';
+
+    form_fields[3].style='max-width: 350px;';
+    form_fields[5].style='max-width: 350px;';
+
+    form_fields[3].className += ' form-control';
+    form_fields[5].className += ' form-control';
+
+
+</script>
+{% endblock %}

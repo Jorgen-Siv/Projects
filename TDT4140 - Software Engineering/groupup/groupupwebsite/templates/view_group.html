@@ -1,0 +1,100 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/view_group.css' %}">
+
+<br></br>
+<br></br>
+<div class="container" id="group-container">
+    <div class="row gutters">
+    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+    <div class="card h-100">
+        <div class="card-body">
+            <div class="account-settings">
+                <div class="user-profile">
+                     <div class="user-avatar">
+                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+                     </div>
+                    <h5 class="group-name" id="group-name">{{ group_model.name }}</h5>
+                    <hr style="width:100%;text-align:left;margin-left:0">
+                </div>
+                <div class="about">
+                    <label for="members">Group Leader</label>
+                    <br>
+                    <h7 class="text-field" id="groupName">{{group_model.group_leader.profile.full_name}}</h7>
+                    <br>
+                    <br>
+
+                    <label for="members">Group Members</label>
+                    <br>
+                    {%for member in group_model.members.all%}
+                    <h7 class="text-field" id="groupName">{{member.full_name}}</h7>
+                    <br>
+                    {%endfor%}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+    <div class="card h-100">
+        <div class="card-body">
+            <div class="row gutters">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <h5 class="mb-2 text-primary" id="small-heading">Group Details</h5>
+                    <hr style="width:100%;text-align:left;margin-left:0;margin-bottom:30px">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="groupName">Group Name</label>
+                        <br>
+                        <h7 class="text-field" id="groupName">{{ group_model.name }}</h7>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="ageGap">Ages</label>
+                        <br>
+                        <h7 class="text-field" id="ageGap">{{ group_model.age_min }} - {{ group_model.age_max }}</h7>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="date">Meeting Date</label>
+                        <br>
+                        <h7 class="text-field" id="date">{{ group_model.date_meeting }}</h7>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <br>
+                        <h7 class="text-field" id="loaction">{{ group_model.location }}</h7>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="interests">Interests</label>
+                        <br>
+                        <h7 class="text-field" id="interests">{{ group_model.interests }}</h7>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="interests">Contact Information</label>
+                        <br>
+                        <h7 class="text-field" id="interests">{{ group_model.email }}</h7>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+{% endblock %}

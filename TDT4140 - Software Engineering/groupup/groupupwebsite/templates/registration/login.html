@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content%}
+<link rel="stylesheet" type="text/css" href="{% static '/css/login.css' %}">
+<br>
+<br>
+<div class="container">
+    <div class="card">
+        <div class="outer_layer">
+            <h2>Welcome to GroupUp!</h2>
+            <form method="post">
+                {% csrf_token %}
+
+                <label for="id_username">Username</label>
+                <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" 
+                maxlength="150" required id="id_username" class="form-control" placeholder="Enter username">
+
+                <label for="id_password">Password</label>
+                <input type="password" name="password" autocomplete="current-password" 
+                required id="id_password" class="form-control" placeholder="Enter password">
+
+                <div class="btn_in_login">
+                    <div class="text-right">
+                    <a class="btn btn-secondary" id="cancel" href="/create_profile/"> Create Profile</a>
+                    <input type="submit" class="btn btn-primary" id="submit" value="Login" href="/profil/">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

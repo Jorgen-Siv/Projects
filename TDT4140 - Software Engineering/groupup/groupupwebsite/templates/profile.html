@@ -1,0 +1,79 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/profile.css' %}">
+<br></br>
+<br></br>
+<div class="container" id="profile-container">
+    <div class="row gutters">
+    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+    <div class="card h-100">
+        <div class="card-body">
+            <div class="account-settings">
+                <div class="about">
+                    <h5 class="mb-2 text-primary" id="small-heading">Your Groups</h5>
+                    <hr style="width:100%;text-align:left;margin-left:0;margin-bottom:30px">
+
+                    {%for group in group.all%}
+                    <h7 class="text-field" id="groupName">{{group.name}}</h7>
+                    <br>
+                    {%endfor%}                
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+    <div class="card h-100">
+        <div class="card-body">
+            <div class="row gutters">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <h5 class="mb-2 text-primary" id="small-heading">Personal Details</h5>
+                    <hr style="width:100%;text-align:left;margin-left:0;margin-bottom:30px">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <br>
+                        <h7 class="text-field" id="fullName">{{user.profile.full_name}}</h7>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <br>
+                        <h7 class="text-field" id="username">{{user.username}}</h7>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <br>
+                        <h7 class="text-field" id="email">{{user.profile.email}}</h7>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <br>
+                        <h7 class="text-field" id="age">{{user.profile.date_of_birth}}</h7>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="interests">Interests</label>
+                        <br>
+                        <h7 class="text-field" id="interests">{{user.profile.interest_temp}}</h7>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+{% endblock %}

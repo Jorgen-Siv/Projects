@@ -1,0 +1,36 @@
+#id_username, #id_password {
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+.btn_in_login {
+    margin-top: 2rem;
+}
+.outer_layer {
+    position: relative;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+.card {
+    margin-left: 25% !important;
+    margin-right: 25% !important;
+}
+.interest-buttons {
+    margin-left: 5px;
+    margin-bottom: 10px;
+    color: #588157;
+    background-color: #fff;
+    border-color: #588157;
+    border-color: #588157;
+}
+.interest-buttons:hover {
+    background-color: #588157; 
+    color: white;
+}
+#submit {
+    color: #fff;
+    background-color: #588157;
+    border-color: #588157;
+    margin-left: 32%;
+    margin-right: 6%;
+}

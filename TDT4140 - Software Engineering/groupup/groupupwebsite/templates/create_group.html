@@ -1,0 +1,89 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/create_group.css' %}">
+<br></br>
+<br></br>
+<div class="container">
+    <div class="card">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="card-body">
+                <div class="row gutters">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <h6 class="mb-2 text-primary" id="heading">Create Group</h6>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="username">Group name</label>
+                            {{ form.name}}
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="fullName">Minimum age</label>
+                            {{groupForm.age_min}}
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="username">City</label>
+                            {{groupForm.location}}
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="fullName">Maximum age</label>
+                            {{groupForm.age_max}}
+                        </div>
+                    </div>
+
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="birth">Date of Meeting</label>
+                            {{groupForm.date_meeting}}
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="birth">E-mail address for contacting your group</label>
+                            {{groupForm.email}}
+                        </div>
+                    </div>
+                   
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="members">Add Members</label>
+                            <h7 class="text-field" id="groupName">(Use ctrl to select more than one member)</h7>
+                            <br>
+                            {{groupForm.members}}
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="interests">Interests</label>
+                            {{groupForm.interests}}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="text-right">
+                        <a class="btn btn-secondary" href="{% url 'profile' %}">Cancel</a>
+                        <input class="btn btn-primary login_btn" id="submit" type="submit" value="Create group">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
